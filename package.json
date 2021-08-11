@@ -1,0 +1,22 @@
+{
+  "name": "sdc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HR-SDC-Group/reviews-atelier.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HR-SDC-Group/reviews-atelier/issues"
+  },
+  "homepage": "https://github.com/HR-SDC-Group/reviews-atelier#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
