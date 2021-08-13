@@ -1,4 +1,6 @@
--- sudo -u postgres psql < server/schema.sql
+-- psql -u postgres psql < server/schema.sql
+
+-- DROP DATABASE postgres IF EXISTS;
 
 CREATE TABLE reviews (
   id SERIAL,

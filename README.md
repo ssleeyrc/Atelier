@@ -18,9 +18,11 @@
   - select/rejoin an instance: psql postgresql -U (db name)
   - list db: \l
   - select a database: \c testdb
-  - running the sql file: sudo -u postgres psql < server/schema.sql
+  - running the sql file: psql -u postgres psql < server/schema.sql (not sure)
   - show tables: \dt+
   - drop table: DROP TABLE (table name)
   - show data in table: TABLE (table name);
+  - show schema: \d (table name);
+  - show number of rows: select count(*) from (table name);
 
 - run the command to seed a file

@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npm test"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npx nodemon server/index.js"
   },
   "repository": {
     "type": "git",
@@ -17,6 +18,13 @@
   },
   "homepage": "https://github.com/HR-SDC-Group/reviews-atelier#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "axios": "^0.21.1",
+    "compression": "^1.7.4",
+    "express": "^4.17.1",
+    "pg": "^8.7.1",
+    "pg-promise": "^10.11.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
   }
 }
