@@ -32,7 +32,7 @@ COPY reviews_photos FROM '/Users/ssleeyrc/Downloads/reviews_photos.csv' DELIMITE
 CREATE TABLE characteristics (
   id SERIAL,
   characteristics_id INT,
-  reviewe_id INT,
+  review_id INT,
   value INT,
   PRIMARY KEY (id)
 );

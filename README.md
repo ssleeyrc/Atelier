@@ -24,5 +24,7 @@
   - show data in table: TABLE (table name);
   - show schema: \d (table name);
   - show number of rows: select count(*) from (table name);
+  - check current db and user: \c
+  
 
 - run the command to seed a file
