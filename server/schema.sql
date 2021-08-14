@@ -22,8 +22,8 @@ COPY reviews FROM '/Users/ssleeyrc/Downloads/reviews.csv' DELIMITER ',' CSV HEAD
 
 CREATE TABLE reviews_photos (
   id SERIAL,
-  reviewer_id INT,
-  url TEXT,
+  review_id INT,
+  url VARCHAR,
   PRIMARY KEY (id)
 );
 

@@ -3,7 +3,7 @@ const path = require('path');
 const axios = require('axios');
 const compression = require('compression')
 // const config = require('../config.js');
-const db = require('../models/model.js');
+const db = require('../database/database.js');
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -18,7 +18,6 @@ app.listen(port, () => {
 
 
 app.get('/reviews', (req, res) => {
-
   db.getReviews(req.query, (err, result) => {
     if (err) {
       console.log(err);
