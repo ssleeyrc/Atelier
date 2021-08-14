@@ -16,13 +16,12 @@ app.listen(port, () => {
   console.log(`listening on port: ${port}`);
 });
 
-app.get('/', (req, res) => {
-  console.log('this is from the server');
-});
 
 app.get('/reviews', (req, res) => {
-  console.log('this is get reviews');
-  db.getReviews((err, result) => {
+  // console.log('this is get reviews');
+  let { product_id } = req.query;
+
+  db.getReviews(product_id, (err, result) => {
     if (err) {
       console.log(err);
       res.sendStatus(404);
@@ -30,11 +29,6 @@ app.get('/reviews', (req, res) => {
       // console.log(result);
       res.send(result);
     }
-  })
-    // .then((result) => {
-    //   res.send(result);
-    // })
-    // .catch((err) => {
-    //   res.sendStatus(404);
-    // })
+  });
+
 });

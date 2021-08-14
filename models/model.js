@@ -16,14 +16,13 @@ pool.connect()
     console.log('err: ', err);
   });
 
-var getReviews = (callback) => {
-  pool.query("SELECT * FROM reviews limit 5", (err, result) => {
+var getReviews = (product_id, callback) => {
+  let query = 
+  pool.query(`SELECT * FROM reviews where reviews.product_id = ${product_id}`, (err, result) => {
     if (err) {
       throw err;
     } else {
-      // console.log(result.rows);
       callback(null, result.rows);
-      console.log('you did it!!')
     }
   });
 };
