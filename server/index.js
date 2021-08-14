@@ -18,17 +18,13 @@ app.listen(port, () => {
 
 
 app.get('/reviews', (req, res) => {
-  // console.log('this is get reviews');
-  let { product_id } = req.query;
 
-  db.getReviews(product_id, (err, result) => {
+  db.getReviews(req.query, (err, result) => {
     if (err) {
       console.log(err);
       res.sendStatus(404);
     } else {
-      // console.log(result);
       res.send(result);
     }
   });
-
 });

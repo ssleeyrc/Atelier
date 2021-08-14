@@ -16,11 +16,11 @@ pool.connect()
     console.log('err: ', err);
   });
 
-var getReviews = (product_id, callback) => {
-  let query = 
-  pool.query(`SELECT * FROM reviews where reviews.product_id = ${product_id}`, (err, result) => {
+var getReviews = (query, callback) => {
+
+  pool.query(`SELECT * FROM reviews where product_id=${query.product_id} ORDER BY ${query.sort} DESC`, (err, result) => {
     if (err) {
-      throw err;
+      console.log(err);
     } else {
       callback(null, result.rows);
     }
