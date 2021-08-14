@@ -19,6 +19,7 @@ CREATE TABLE reviews (
 );
 
 COPY reviews FROM '/Users/ssleeyrc/Downloads/reviews.csv' DELIMITER ',' CSV HEADER;
+CREATE INDEX ON reviews (product_id);
 
 CREATE TABLE reviews_photos (
   id SERIAL,
@@ -42,7 +43,7 @@ COPY char_reviews FROM '/Users/ssleeyrc/Downloads/characteristic_reviews.csv' DE
 CREATE TABLE characteristics (
   id SERIAL,
   product_id INT,
-  name TEXT,
+  name VARCHAR (50),
   PRIMARY KEY (id)
 );
 
