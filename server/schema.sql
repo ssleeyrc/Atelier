@@ -6,7 +6,7 @@ CREATE TABLE reviews (
   id SERIAL,
   product_id INT,
   rating INT,
-  date VARCHAR (13),
+  date BIGINT,
   summary VARCHAR,
   body VARCHAR,
   recommend BOOLEAN,

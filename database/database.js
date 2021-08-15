@@ -25,9 +25,13 @@ var getReviews = (query, callback) => {
     count: count || 5
   };
 
-  response.results = pool.query(`SELECT reviews.id AS review_id, reviews.rating, reviews.summary, reviews.recommend, reviews.response, reviews.body, reviews.date, reviews.reviewer_name, reviews.helpfulness, json_agg(json_build_object('id', reviews_photos.id, 'url', reviews_photos.url)) AS photos
+  response.results = pool.query(`SELECT reviews.id AS review_id,
+  reviews.rating, reviews.summary, reviews.recommend, reviews.response,
+  reviews.body, to_timestamp(reviews.date/1000) as date, reviews.reviewer_name, reviews.helpfulness,
+  json_agg(json_build_object('id', reviews_photos.id, 'url', reviews_photos.url)) AS photos
   FROM reviews LEFT JOIN reviews_photos ON reviews_photos.review_id = reviews.id
-  WHERE product_id=${product_id} AND reviews.reported = false GROUP BY reviews.id`, (err, result) => {
+  WHERE product_id=${product_id} AND reviews.reported=false GROUP BY reviews.id`,
+  (err, result) => {
     if (err) {
       console.log(err);
     } else {
@@ -39,6 +43,10 @@ var getReviews = (query, callback) => {
       });
     }
   });
+};
+
+var getRatings = (query, callback) => {
+
 };
 
 module.exports = {
