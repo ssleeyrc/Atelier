@@ -17,13 +17,11 @@ pool.connect()
   });
 
 var getReviews = (query, callback) => {
-  // ORDER BY ${sort} DESC (?sort=)
   var { product_id, page, count, sort } = query;
   var response = {
     product: product_id,
     page: page || 0,
-    count: count || 5,
-    sort: sort || 'relevant'
+    count: count || 5
   };
 
   response.results = pool.query(`SELECT reviews.id AS review_id,
@@ -111,7 +109,9 @@ var getMeta = (query, callback) => {
   });
 };
 
-
+// var post = (body, callback) => {
+//   pool.query(`INSERT INTO reviews ()`)
+// }
 
 module.exports = {
   getReviews, getMeta

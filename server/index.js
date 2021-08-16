@@ -38,3 +38,14 @@ app.get('/reviews/meta', (req, res) => {
     }
   });
 });
+
+// app.post('/reviews', (req, res) => {
+//   db.post(req.body, (err, result) => {
+//     if (err) {
+//       console.log(err);
+//       res.sendStatus(404);
+//     } else {
+//       res.status(200).send(result);
+//     }
+//   });
+// });
