@@ -1,9 +1,11 @@
+require('newrelic');
 const express = require('express');
 const path = require('path');
 const axios = require('axios');
 const compression = require('compression')
 // const config = require('../config.js');
 const db = require('../database/database.js');
+
 
 const app = express();
 const port = process.env.PORT || 3000;

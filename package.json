@@ -21,6 +21,7 @@
     "axios": "^0.21.1",
     "compression": "^1.7.4",
     "express": "^4.17.1",
+    "newrelic": "^8.1.0",
     "pg": "^8.7.1",
     "pg-promise": "^10.11.0"
   },
