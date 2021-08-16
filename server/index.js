@@ -23,7 +23,18 @@ app.get('/reviews', (req, res) => {
       console.log(err);
       res.sendStatus(404);
     } else {
-      res.send(result);
+      res.status(200).send(result);
+    }
+  });
+});
+
+app.get('/reviews/meta', (req, res) => {
+  db.getMeta(req.query, (err, result) => {
+    if (err) {
+      console.log(err);
+      res.sendStatus(404);
+    } else {
+      res.status(200).send(result);
     }
   });
 });
