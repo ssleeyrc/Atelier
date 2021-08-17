@@ -4,7 +4,7 @@ const pool = new Pool({
   user: 'ssleeyrc',
   host: 'localhost',
   database: 'postgres',
-  password: '',
+  password: '960808',
   port: 5432,
 });
 
@@ -52,15 +52,15 @@ var getMeta = (query, callback) => {
     char: {}
   };
 
-  var ratingQuery = `SELECT json_build_object(
-  '1', SUM(CASE WHEN reviews.rating = 1 THEN 1 ELSE 0 END),
-  '2', SUM(CASE WHEN reviews.rating = 2 THEN 1 ELSE 0 END),
-  '3', SUM(CASE WHEN reviews.rating = 3 THEN 1 ELSE 0 END),
-  '4', SUM(CASE WHEN reviews.rating = 4 THEN 1 ELSE 0 END),
-  '5', SUM(CASE WHEN reviews.rating = 5 THEN 1 ELSE 0 END)) AS ratings
-  FROM reviews WHERE reviews.product_id=${product_id}
-  GROUP BY reviews.product_id`;
-  // var ratingQuery = `SELECT jsonb_build_object(rating, COUNT(*)) AS ratings FROM reviews WHERE product_id=${product_id} GROUP BY rating`;
+  // var ratingQuery = `SELECT json_build_object(
+  // '1', SUM(CASE WHEN reviews.rating = 1 THEN 1 ELSE 0 END),
+  // '2', SUM(CASE WHEN reviews.rating = 2 THEN 1 ELSE 0 END),
+  // '3', SUM(CASE WHEN reviews.rating = 3 THEN 1 ELSE 0 END),
+  // '4', SUM(CASE WHEN reviews.rating = 4 THEN 1 ELSE 0 END),
+  // '5', SUM(CASE WHEN reviews.rating = 5 THEN 1 ELSE 0 END)) AS ratings
+  // FROM reviews WHERE reviews.product_id=${product_id}
+  // GROUP BY reviews.product_id`;
+  var ratingQuery = `SELECT json_object_agg(ratings.value, ratings.number) AS ratings FROM (SELECT rating AS value, COUNT(*) AS number FROM reviews WHERE product_id=4 GROUP BY rating) AS ratings`;
 
   var recommendQuery = `SELECT json_build_object(
   'false', SUM(CASE WHEN reviews.recommend = 'false' THEN 1 ELSE 0 END),

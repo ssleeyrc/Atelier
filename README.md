@@ -25,6 +25,12 @@
   - show schema: \d (table name);
   - show number of rows: select count(*) from (table name);
   - check current db and user: \c
-  
+  - connection info: \conninfo
 
 - run the command to seed a file
+
+## ubuntu:
+ - sudo su - postgres
+ - psql --> to enter psql shell
+ - \q --> exit psql
+ - exit --> exit postgres
