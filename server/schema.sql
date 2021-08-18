@@ -18,7 +18,8 @@ CREATE TABLE reviews (
   PRIMARY KEY (id)
 );
 
-COPY reviews FROM '/Users/ssleeyrc/Downloads/reviews.csv' DELIMITER ',' CSV HEADER;
+COPY reviews FROM '/Users/ssleeyrc/Desktop/sdc/csv/reviews.csv' DELIMITER ',' CSV HEADER;
+
 CREATE INDEX ON reviews (product_id);
 
 CREATE TABLE reviews_photos (
@@ -28,7 +29,7 @@ CREATE TABLE reviews_photos (
   PRIMARY KEY (id)
 );
 
-COPY reviews_photos FROM '/Users/ssleeyrc/Downloads/reviews_photos.csv' DELIMITER ',' CSV HEADER;
+COPY reviews_photos FROM '/Users/ssleeyrc/Desktop/sdc/csv/reviews_photos.csv' DELIMITER ',' CSV HEADER;
 
 CREATE TABLE char_reviews (
   id SERIAL,
@@ -38,7 +39,7 @@ CREATE TABLE char_reviews (
   PRIMARY KEY (id)
 );
 
-COPY char_reviews FROM '/Users/ssleeyrc/Downloads/characteristic_reviews.csv' DELIMITER ',' CSV HEADER;
+COPY char_reviews FROM '/Users/ssleeyrc/Desktop/sdc/csv/characteristic_reviews.csv' DELIMITER ',' CSV HEADER;
 
 CREATE TABLE characteristics (
   id SERIAL,
@@ -47,4 +48,4 @@ CREATE TABLE characteristics (
   PRIMARY KEY (id)
 );
 
-COPY characteristics FROM '/Users/ssleeyrc/Downloads/characteristics.csv' DELIMITER ',' CSV HEADER;
+COPY characteristics FROM '/Users/ssleeyrc/Desktop/sdc/csv/characteristics.csv' DELIMITER ',' CSV HEADER;
