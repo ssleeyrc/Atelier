@@ -1,4 +1,4 @@
 node_modules
 package-lock.json
 newrelic_agent.log
-pswd.js
+config.js
