@@ -20,7 +20,10 @@ CREATE TABLE reviews (
 
 COPY reviews FROM '/Users/ssleeyrc/Desktop/sdc/csv/reviews.csv' DELIMITER ',' CSV HEADER;
 
+CREATE INDEX ON reviews (id);
 CREATE INDEX ON reviews (product_id);
+CREATE INDEX ON reviews (rating);
+CREATE INDEX ON reviews (recommend);
 
 CREATE TABLE reviews_photos (
   id SERIAL,
@@ -55,3 +58,4 @@ CREATE TABLE characteristics (
 COPY characteristics FROM '/Users/ssleeyrc/Desktop/sdc/csv/characteristics.csv' DELIMITER ',' CSV HEADER;
 
 CREATE INDEX ON characteristics (product_id);
+

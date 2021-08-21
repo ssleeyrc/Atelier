@@ -2,3 +2,4 @@ node_modules
 package-lock.json
 newrelic_agent.log
 config.js
+newrelic.js
