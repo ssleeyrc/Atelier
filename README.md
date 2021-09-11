@@ -1,14 +1,17 @@
-# reviews-atelier
+# Reviews-Atelier
 
-# ETL STEPS
+<img width="590" alt="Screen Shot 2021-08-24 at 21 59 59" src="https://user-images.githubusercontent.com/81060184/132963292-ac5b11ac-ce26-4629-a33d-8820373af7ac.png">
 
-## Extraction
+
+## ETL STEPS
+
+### Extraction
  - getting the CSV files from the existing database
 
-## Transform
+### Transform
 - create the schema with desired columns
 
-## Load
+### Load
 - import the csv files into vs code:
   - brew install postgresql
   - brew services start postgresql
@@ -29,7 +32,7 @@
 
 - run the command to seed a file
 
-## ubuntu:
+### Ubuntu:
  - sudo su - postgres
  - psql --> to enter psql shell
  - \q --> exit psql
